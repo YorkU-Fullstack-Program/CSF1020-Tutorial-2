@@ -1,0 +1,23 @@
+{
+  "name": "csf1020-tutorial-2",
+  "version": "1.0.0",
+  "description": "This exercise builds on the APIs that we wrote in the previous Tutorial. All of the APIs here are the same, the only difference is that I've organized the code slightly, by moving the `/user` endpoints that we wrote last time into their own folder.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YorkU-Fullstack-Program/CSF1020-Tutorial-2.git"
+  },
+  "author": "Neil Wadden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YorkU-Fullstack-Program/CSF1020-Tutorial-2/issues"
+  },
+  "homepage": "https://github.com/YorkU-Fullstack-Program/CSF1020-Tutorial-2#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
