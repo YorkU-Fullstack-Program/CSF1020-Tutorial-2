@@ -16,19 +16,19 @@ router.get('/:userId', (req, res) => {
     return res.send(user);
 });
 
-router.post('/', (req, res) => {
-    const userId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
+// router.post('/', (req, res) => {
+//     const userId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
 
-    const newUser = {
-        id: userId,
-        name: req.body.name,
-        age: req.body.age
-        
-    };
+//     const newUser = {
+//         id: userId,
+//         name: req.body.name,
+//         age: req.body.age
 
-    users.push(newUser);
-    return res.status(201).send(`Created User: ${newUser.id}`);
-});
+//     };
+
+//     users.push(newUser);
+//     return res.status(201).send(`Created User: ${newUser.id}`);
+// });
 
 router.delete('/:userId', (req, res) => {
     const userId = parseInt(req.params.userId, 10);
@@ -51,6 +51,10 @@ router.patch('/:userId', (req, res) => {
     }
 
     const user = users[index];
+
+    if (user.id !== req.currentUser.id) {
+        return res.status(403).send('Forbidden');
+    }
 
     if (req.body.name) {
         user.name = req.body.name;

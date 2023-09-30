@@ -1,22 +1,29 @@
+const { v4 } = require('uuid');
+
 const users = [
     { 
         id: 1, 
         name: 'Alice',
         age: 25, 
-        username: 'alice', 
+        username: 'alice',
+        password: 'password',
+        session_uuid: v4()
     },
     { 
         id: 2, 
         name: 'Bob', 
         age: 30, 
-        username: 'bob', 
+        username: 'bob',
+        password: 'password',
+        session_uuid: v4()
     },
     { 
         id: 3, 
         name: 'Charlie', 
         age: 35 , 
         username: 'charlie', 
-        password: 'password'
+        password: 'password',
+        session_uuid: v4()
     }
 ];
 
