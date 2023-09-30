@@ -13,7 +13,7 @@ Install the necessary npm packages: `jsonwebtoken`
 ### Instructions:
 - Create a /login endpoint that accepts a username and password.
 - Match the username and password to a user in the USER array (check out the constants file).
-- If the credentials are correct, generate a JWT token and send it in the response.
+- If the credentials are correct, generate a JWT token with the user object and send it in the response.
 
 
 ## Exercise #2 - Setting up Middleware
