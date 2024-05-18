@@ -3,13 +3,15 @@ const users = [
         id: 1, 
         name: 'Alice',
         age: 25, 
-        username: 'alice', 
+        username: 'alice',
+        password: 'password'
     },
     { 
         id: 2, 
         name: 'Bob', 
         age: 30, 
-        username: 'bob', 
+        username: 'bob',
+        password: 'password'
     },
     { 
         id: 3, 
