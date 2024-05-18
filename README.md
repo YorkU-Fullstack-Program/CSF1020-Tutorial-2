@@ -42,7 +42,7 @@ Install the necessary npm packages: `argon2`
 - What issues do you see with what we have encoded?
 - Let's remove the existing post `/user` in the `users.js` and instead let's create a `/register` API in the auth.js file
 - This API will be a post request and we want it to take the following arguments: `name`, `age`, `username`, `password`
-- The password that we store in our `users` object in constants should be encrypted using argon2.
+- The password that we store in our `users` object in constants should be encrypted using `argon2`.
 - Update the login API to check against the hashed password
 
 ## Exercise #4 - Implement Logout Logic (If time permits)

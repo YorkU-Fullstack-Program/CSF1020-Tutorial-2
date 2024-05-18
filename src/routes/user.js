@@ -16,20 +16,6 @@ router.get('/:userId', (req, res) => {
     return res.send(user);
 });
 
-router.post('/', (req, res) => {
-    const userId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
-
-    const newUser = {
-        id: userId,
-        name: req.body.name,
-        age: req.body.age
-        
-    };
-
-    users.push(newUser);
-    return res.status(201).send(`Created User: ${newUser.id}`);
-});
-
 router.delete('/:userId', (req, res) => {
     const userId = parseInt(req.params.userId, 10);
     const index = users.findIndex(u => u.id === userId);
@@ -48,6 +34,10 @@ router.patch('/:userId', (req, res) => {
 
     if (index === -1) {
         return res.status(404).send('User not found.');
+    }
+
+    if (req.currentUser.id !== userId) {
+        return res.status(403).send('Forbidden');
     }
 
     const user = users[index];
